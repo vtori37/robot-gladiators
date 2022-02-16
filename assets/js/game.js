@@ -7,7 +7,7 @@ var playerMoney = 10;
 /* You can also log multiple values at once like this 
 console.log (playerName, playerAttack, playerHealth); */
 
-var enemyName = ["Roborto", "Amy Android", "Robo Trumble"];
+var enemyName = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
@@ -17,13 +17,12 @@ console.log(enemyName[0]);
 console.log(enemyName[3]);
 
 // fight function
-var fight = function (enemyName) {
+var fight = function(enemyName) {
     // repeat and execute as long as the enemy-robot is alive 
-    while(enemyHealth > 0 && enemyHealth > 0) {
-        // window.alert("Welcome to Robot Gladiators!");
+    while(playerHealth > 0 && enemyHealth > 0) {
 
         // asks player if they would like to fight or skip 
-        var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'Fight' or 'SKIP' to choose.");
+        var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
     
          // if player choses to skip
         if (promptFight === "skip" || promptFight === "SKIP") {
@@ -32,7 +31,7 @@ var fight = function (enemyName) {
     
             // if yes (true), leave fight
             if (confirmSkip) {
-                window.alert(playerName + " has decided to skip this fight. Goodbye!");
+                window.alert(playerName + ' has decided to skip this fight. Goodbye!');
             // subtract money from playerMoney for skipping
             playerMoney = playerMoney - 10;
             console.log("playerMoney", playerMoney);
@@ -45,7 +44,7 @@ var fight = function (enemyName) {
         // // remove enemy's health by subtracting the amount set in the playerAttack variables
         enemyHealth = enemyHealth - playerAttack;
         console.log(
-            playerName + " attacked " + enemyName + ". " + enemyName + "now has " + enemyHealth + " health remaining."
+            playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
         );
 
         // check enemy's health
@@ -58,7 +57,7 @@ var fight = function (enemyName) {
         //leave whiele() loop since enemy is dead
         break;
         } else {
-            window.alert(enemyName + " still has " + enemyName + " health left.");
+            window.alert(enemyName + " still has " + enemyHealth + " health left.");
         }
 
         // remove player's health by subtracting the amount set in the enemyAttack variable
@@ -88,7 +87,7 @@ for(var i = 0; i < enemyName.length; i++) {
         window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
     
         // pick new enemy to fight based on the index of the enemyNames array
-        var pickedEnemyName = enemyNames[i];
+        var pickedEnemyName = enemyName[i];
     
         // reset enemyHealth before starting new fight
         enemyHealth = 50;
@@ -103,4 +102,4 @@ for(var i = 0; i < enemyName.length; i++) {
         window.alert("You have lost your robot in battle! Game Over!");
         break;
       }
-    };
+    }
