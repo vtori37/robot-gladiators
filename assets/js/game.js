@@ -103,7 +103,6 @@ var fight = function(enemyName) {
             }    
         } 
     }
-
         // if player is not alive, break out of the loop and let endGame function run
       else {
         window.alert("You have lost your robot in battle! Game Over!");
@@ -120,7 +119,7 @@ var endGame = function() {
     window.alert("The game has now ended. Let's see how you did!");
 
     // if player is still alive, player wins!
-    if (playerHealth > 0 && i < enemyNames.length -1) {
+    if (playerHealth > 0) {
         window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + ".");
     } else {
         window.alert("You've lost your robot in battle.");
@@ -136,16 +135,17 @@ var endGame = function() {
     }
 };
 
+// go to the shop between battles
 var shop = function () {
     // ask player what they'd like to do
     var shopOptionPrompt = window.prompt(
-        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one:'REFILL', 'UPGRADE' to make a choice."
+        'Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one:"REFILL", "UPGRADE" to make a choice.'
     );
 
 // use switch to carry out action
 switch (shopOptionPrompt) {
-    case "REFILL":
-    case "refill":
+    case 'REFILL':
+    case 'refill':
         if (playerMoney >= 7) {
             window.alert("Refilling player's health by 20 for 7 dollars.");
     
@@ -158,8 +158,8 @@ switch (shopOptionPrompt) {
     }
 
         break;
-    case "UPGRADE":
-    case "upgrade":
+    case 'UPGRADE':
+    case 'upgrade':
     if (playerMoney >= 7) {
         window.alert("Upgrading player's attack by 6 for 7 dollars.");
 
@@ -188,6 +188,7 @@ switch (shopOptionPrompt) {
     // start the game when the page loads
     startGame();
 
+ 
 
 
  
