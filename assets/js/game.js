@@ -5,38 +5,6 @@ var randomNumber = function(min, max) {
     return value;
   }; 
 
-
-// player name, health, attack power, and money
-var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
-    health: 100,
-    attack: 10,
-    money: 10,
-    reset: function() {
-      this.health = 100;
-      this.money = 10;
-      this.attack = 10;
-    }
-  };
-
-/* You can also log multiple values at once like this 
-console.log (playerInfo.name, playerInfo.attack, playerInfo.health); */
-
-var enemyInfo = [
-    {
-      name: "Roborto",
-      attack: 12
-    },
-    {
-      name: "Amy Android",
-      attack: 13
-    },
-    {
-      name: "Robo Trumble",
-      attack: 14
-    }
-  ];
-
 // fight function
 var fight = function(enemy) {
     // repeat and execute as long as the enemy-robot is alive 
@@ -66,8 +34,6 @@ var fight = function(enemy) {
 
         enemyHealth = Math.max(0, enemyHealth - damage);
         console.log(
-            
-            
             playerInfo.name  + ' attacked ' + enemyName + '. ' + enemyName + ' now has ' + enemyHealth + ' health remaining.'
         );
 
@@ -107,11 +73,7 @@ var fight = function(enemy) {
    var startGame = function() {
   // reset player stats
   playerInfo.reset();
-        // reset player stats
-        playerInfo.health = 100;
-        playerInfo.attack= 10;
-        playerInfo.money = 10;
-        
+
     // fight each enemy robot by looping over them and fighting them one at a time
     for (var i = 0; i < enemyInfo.length; i++) {
         // if a player is still alive and wants to keep fighting
@@ -204,7 +166,21 @@ var shop = function() {
     }
   };
     // start the game when the page loads
-   
+
+   /* END GAME FUNCTIONS
+   GAME INFO / VARIABLES */
+
+  // PLAYER INFORMATION 
+var playerInfo = {
+    name: window.prompt("What is your robot's name?"),
+    health: 100,
+    attack: 10,
+    money: 10,
+    reset: function() {
+      this.health = 100;
+      this.money = 10;
+      this.attack = 10;
+    },
     refillHealth: function() {
         if (this.money >= 7) {
           window.alert("Refilling player's health by 20 for 7 dollars.");
@@ -225,20 +201,30 @@ var shop = function() {
           window.alert("You don't have enough money!");
         }
       }
+  };
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-    startGame();
+// ENEMY INFO
+var enemyInfo = [
+    {
+      name: "Roborto",
+      attack: 12
+    },
+    {
+      name: "Amy Android",
+      attack: 13
+    },
+    {
+      name: "Robo Trumble",
+      attack: 14
+    }
+  ];
 
- 
+  console.log(enemyInfo);
+  console.log(enemyInfo[0]);
+  console.log(enemyInfo[0].name);
+  console.log(enemyInfo[0]['attack']);
+  
+  /* END GAME INFORMATION / VARIABLES */
+  
+  /* RUN GAME */
+  startGame();
