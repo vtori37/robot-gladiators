@@ -225,20 +225,6 @@ var shop = function() {
           window.alert("You don't have enough money!");
         }
       }
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
     startGame();
 
  
