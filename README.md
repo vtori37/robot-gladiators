@@ -1,10 +1,10 @@
-# robot-gladiators
+# Robot Gladiators
 
-# Description
+## Description
 
-# License
+## License
 
-# Contributors
+## Contributors
 
 
 
