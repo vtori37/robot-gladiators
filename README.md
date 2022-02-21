@@ -1,4 +1,4 @@
-# robot-gladiators
+# Robot Gladiators
 
 ## Description
 
